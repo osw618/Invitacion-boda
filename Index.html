@@ -1,0 +1,1809 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Boda Portillo Sanchez</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Invitación a la boda">
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Alex+Brush&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-principal: #B8D5E5;
+      --color-principal-claro: #E2F0F9;
+      --color-principal-medio: #9DC2D8;
+      --color-principal-oscuro: #7BA9C5;
+      --color-secundario: #D6BA7C;
+      --color-acento: #A8C8DC;
+      --color-acento-dorado: #E8D4A6;
+      --fondo: #F7FBFF;
+      --fondo-card: #FFFFFF;
+      --texto: #1F2937;
+      --texto-suave: #6B7280;
+      --texto-claro: #94A3B8;
+      --borde: #D1E4F0;
+      --gris-claro: #F8FAFC;
+      --exito: #10B981;
+      --error: #EF4444;
+      --sombra-suave: 0 8px 30px rgba(123, 169, 197, 0.12);
+      --sombra-media: 0 15px 35px rgba(123, 169, 197, 0.15);
+      --transicion: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --rosa-floral: #FFE6EE;
+      --verde-floral: #E8F4EA;
+      --lila-floral: #F0E6FF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #FFFFFF 0%, var(--fondo) 45%, var(--color-principal-claro) 100%);
+      font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--texto);
+      position: relative;
+      overflow-x: hidden;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    /* Fondo floral semi-transparente */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 230, 238, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(232, 244, 234, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(240, 230, 255, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* Decoraciones florales mejoradas */
+    .decoracion {
+      position: fixed;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.6;
+    }
+
+    .flor-1 {
+      top: 5%;
+      left: 5%;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle at 30% 30%, var(--rosa-floral) 0%, transparent 70%);
+      filter: blur(20px);
+      animation: flotar 15s ease-in-out infinite;
+    }
+
+    .flor-2 {
+      bottom: 5%;
+      right: 5%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle at 70% 70%, var(--color-acento) 0%, transparent 70%);
+      filter: blur(25px);
+      animation: flotar 20s ease-in-out infinite reverse;
+    }
+
+    .flor-3 {
+      top: 15%;
+      right: 10%;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle at 50% 50%, var(--color-secundario) 0%, transparent 70%);
+      filter: blur(15px);
+      animation: flotar 18s ease-in-out infinite;
+    }
+
+    .flor-4 {
+      top: 70%;
+      left: 8%;
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(circle at 60% 40%, var(--lila-floral) 0%, transparent 70%);
+      filter: blur(15px);
+      animation: flotar 22s ease-in-out infinite reverse;
+    }
+
+    .flor-5 {
+      top: 20%;
+      left: 75%;
+      width: 90px;
+      height: 90px;
+      background: radial-gradient(circle at 40% 60%, var(--verde-floral) 0%, transparent 70%);
+      filter: blur(18px);
+      animation: flotar 25s ease-in-out infinite;
+    }
+
+    @keyframes flotar {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-20px) rotate(5deg);
+      }
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 580px;
+      animation: aparecer 1s ease-out;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* PORTADA */
+    .portada {
+      background: var(--fondo-card);
+      border-radius: 28px;
+      box-shadow: var(--sombra-media);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      padding: 40px 25px;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .portada::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(to right, var(--color-principal), var(--color-secundario), var(--color-principal));
+    }
+
+    .portada-titulo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.8rem;
+      color: var(--color-principal-oscuro);
+      margin-bottom: 10px;
+    }
+
+    .portada-subtitulo {
+      font-size: 1.2rem;
+      color: var(--texto-suave);
+      margin-bottom: 30px;
+    }
+
+    .portada-foto {
+      width: 200px;
+      height: 200px;
+      border-radius: 20%;
+      object-fit: cover;
+      border: 5px solid white;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      display: block;
+    }
+
+    .portada-mensaje {
+      font-size: 1.1rem;
+      color: var(--texto-suave);
+      margin: 25px 0;
+      line-height: 1.6;
+    }
+
+    /* Botón para mostrar invitación */
+    .boton-mostrar {
+      background: linear-gradient(135deg, var(--color-principal-oscuro), var(--color-principal));
+      color: white;
+      border: none;
+      padding: 18px 40px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: var(--transicion);
+      box-shadow: 0 10px 25px rgba(123, 169, 197, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .boton-mostrar:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(123, 169, 197, 0.4);
+      background: linear-gradient(135deg, var(--color-principal), var(--color-principal-oscuro));
+    }
+
+    /* Contenedor de la invitación (oculto inicialmente) */
+    #invitacion-completa {
+      display: none;
+      animation: deslizar 0.8s ease-out;
+    }
+
+    @keyframes deslizar {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* CARD PRINCIPAL CON FONDO FLORAL */
+    .card {
+      background: var(--fondo-card);
+      border-radius: 28px;
+      box-shadow: var(--sombra-media);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      padding: 30px 25px;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(to right, var(--color-principal), var(--color-secundario), var(--color-principal));
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(184, 213, 229, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(214, 186, 124, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    /* Patrones florales en las esquinas */
+    .esquina-floral {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      opacity: 0.1;
+      z-index: 0;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .esquina-floral-tl {
+      top: -10px;
+      left: -10px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23B8D5E5' d='M20,20 Q40,10 60,20 T80,40 Q90,60 80,80 T60,90 Q40,100 20,90 T10,60 Q0,40 10,20 T20,20Z'/%3E%3C/svg%3E");
+      transform: rotate(45deg);
+    }
+
+    .esquina-floral-br {
+      bottom: -10px;
+      right: -10px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23D6BA7C' d='M80,80 Q60,90 40,80 T20,60 Q10,40 20,20 T40,10 Q60,0 80,10 T90,40 Q100,60 90,80 T80,80Z'/%3E%3C/svg%3E");
+      transform: rotate(45deg);
+    }
+
+    /* CABECERA */
+    .cabecera {
+      text-align: center;
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .bendicion {
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-principal-medio);
+      margin-bottom: 20px;
+      font-weight: 600;
+      background: linear-gradient(135deg, rgba(255, 230, 238, 0.2), rgba(232, 244, 234, 0.2));
+      padding: 12px 20px;
+      border-radius: 50px;
+      display: inline-block;
+      border: 1px solid rgba(184, 213, 229, 0.3);
+    }
+
+    .monograma {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 25px;
+      position: relative;
+    }
+
+    .monograma-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 20%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(123, 169, 197, 0.2);
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      transition: var(--transicion);
+      cursor: default;
+      background: white;
+    }
+
+    .monograma-foto {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transicion);
+    }
+
+    .monograma-inner:hover {
+      transform: scale(1.05) rotate(5deg);
+      box-shadow: 0 15px 35px rgba(123, 169, 197, 0.3);
+    }
+
+    .monograma-inner:hover .monograma-foto {
+      transform: scale(1.1);
+    }
+
+    .monograma::before {
+      content: "";
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-principal), var(--color-secundario));
+      opacity: 0.3;
+      z-index: -1;
+      animation: rotar 20s linear infinite;
+    }
+
+    @keyframes rotar {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* NOMBRES MEJORADOS */
+    .nombres {
+      font-family: "Cormorant Garamond", serif;
+      text-align: center;
+      margin: 25px 0;
+      position: relative;
+    }
+
+    .nombre {
+      font-size: 2.8rem;
+      line-height: 1.1;
+      display: block;
+      color: var(--texto);
+      position: relative;
+      margin-bottom: 8px;
+      padding: 0 20px;
+    }
+
+    .nombre span {
+      background: linear-gradient(135deg, var(--color-principal-oscuro) 30%, var(--color-secundario) 70%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+      display: inline-block;
+      padding: 0 10px;
+    }
+
+    /* Iconos florales junto a los nombres */
+    .nombre-floral::before {
+      content: "❀";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--rosa-floral);
+      font-size: 1.2rem;
+      opacity: 0.7;
+    }
+
+    .nombre-floral::after {
+      content: "❀";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--rosa-floral);
+      font-size: 1.2rem;
+      opacity: 0.7;
+    }
+
+    .nombre-jazmin:hover span::after,
+    .nombre-efrain:hover span::after {
+      opacity: 1;
+    }
+
+    .y {
+      font-size: 1.8rem;
+      color: var(--color-principal-medio);
+      margin: 10px 0;
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    /* VERSÍCULO CON FLORES */
+    .versiculo {
+      background: linear-gradient(135deg, rgba(232, 244, 252, 0.8), rgba(255, 255, 255, 0.9));
+      border-radius: 16px;
+      padding: 25px;
+      margin: 25px 0;
+      text-align: center;
+      border-left: 4px solid var(--color-secundario);
+      box-shadow: var(--sombra-suave);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(184, 213, 229, 0.3);
+    }
+
+    .versiculo::before {
+      content: "❀";
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 1.5rem;
+      color: var(--rosa-floral);
+      opacity: 0.4;
+    }
+
+    .versiculo::after {
+      content: "❀";
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      font-size: 1.5rem;
+      color: var(--rosa-floral);
+      opacity: 0.4;
+      transform: rotate(180deg);
+    }
+
+    .texto-versiculo {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--texto);
+      font-style: italic;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .referencia {
+      font-size: 0.85rem;
+      color: var(--color-principal-oscuro);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    /* FECHA DESTACADA CON FLORES */
+    .fecha-destacada {
+      background: linear-gradient(135deg, var(--color-principal-claro), var(--fondo-card));
+      border-radius: 20px;
+      padding: 25px 20px;
+      margin: 30px 0;
+      text-align: center;
+      box-shadow: var(--sombra-suave);
+      border: 1px solid rgba(184, 213, 229, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fecha-destacada::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(to right, var(--color-principal), var(--color-secundario));
+    }
+
+    /* Flor decorativa en la fecha */
+    .fecha-flor {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      color: var(--rosa-floral);
+      opacity: 0.3;
+      font-size: 1.2rem;
+    }
+
+    .dia {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 4.5rem;
+      line-height: 1;
+      color: var(--color-principal-oscuro);
+      font-weight: 700;
+      margin-bottom: 5px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .mes {
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--color-principal-oscuro);
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .anio {
+      font-size: 1.1rem;
+      letter-spacing: 0.2em;
+      color: var(--color-principal-medio);
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    /* CONTADOR CON FLORES */
+    .contador {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .contador-item {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 16px;
+      padding: 15px 10px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(123, 169, 197, 0.1);
+      border: 1px solid var(--borde);
+      transition: var(--transicion);
+      position: relative;
+    }
+
+    .contador-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(123, 169, 197, 0.2);
+    }
+
+    .contador-item::before {
+      content: "❀";
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-size: 0.7rem;
+      color: var(--rosa-floral);
+      opacity: 0.5;
+    }
+
+    .contador-numero {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--color-principal-oscuro);
+      line-height: 1;
+      margin-bottom: 5px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .contador-etiqueta {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-principal-medio);
+      font-weight: 600;
+    }
+
+    /* SECCIONES CON SEPARADORES FLORALES */
+    .seccion {
+      margin: 35px 0;
+      padding-top: 25px;
+      border-top: 1px solid rgba(184, 213, 229, 0.3);
+      position: relative;
+    }
+
+    .seccion:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .seccion::before {
+      content: "❀ ❀ ❀";
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--rosa-floral);
+      font-size: 0.8rem;
+      letter-spacing: 5px;
+      background: var(--fondo-card);
+      padding: 0 15px;
+    }
+
+    .titulo-seccion {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.8rem;
+      color: var(--color-principal-oscuro);
+      text-align: center;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0 20px;
+    }
+
+    .titulo-seccion::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 20px;
+      right: 20px;
+      height: 3px;
+      background: linear-gradient(to right, transparent, var(--color-principal), transparent);
+      border-radius: 2px;
+    }
+
+    .icono-titulo {
+      margin-right: 10px;
+      color: var(--color-secundario);
+    }
+
+    /* LUGAR CON FONDO FLORAL */
+    .lugar-card {
+      background: linear-gradient(135deg, var(--fondo-card), var(--color-principal-claro));
+      border-radius: 18px;
+      padding: 25px;
+      box-shadow: var(--sombra-suave);
+      border: 1px solid var(--borde);
+      transition: var(--transicion);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lugar-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(123, 169, 197, 0.15);
+    }
+
+    .lugar-card::before {
+      content: "❀";
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 1.2rem;
+      color: var(--rosa-floral);
+      opacity: 0.3;
+      transition: var(--transicion);
+    }
+
+    .lugar-card:hover::before {
+      opacity: 0.6;
+      transform: rotate(15deg);
+    }
+
+    .lugar-tipo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 15px;
+    }
+
+    .lugar-icono {
+      width: 45px;
+      height: 45px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--color-principal), var(--color-principal-oscuro));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+      box-shadow: 0 8px 20px rgba(123, 169, 197, 0.3);
+    }
+
+    .lugar-tipo-texto {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.5rem;
+      color: var(--color-principal-oscuro);
+      font-weight: 600;
+    }
+
+    .lugar-nombre {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--texto);
+      margin-bottom: 8px;
+      letter-spacing: 0.05em;
+    }
+
+    .lugar-direccion {
+      font-size: 0.95rem;
+      color: var(--texto-suave);
+      line-height: 1.5;
+      margin-bottom: 15px;
+      padding-left: 5px;
+    }
+
+    .lugar-mapa {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: linear-gradient(135deg, var(--color-principal), var(--color-principal-oscuro));
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: var(--transicion);
+      box-shadow: 0 5px 15px rgba(123, 169, 197, 0.3);
+    }
+
+    .lugar-mapa:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(123, 169, 197, 0.4);
+      background: linear-gradient(135deg, var(--color-principal-oscuro), var(--color-principal));
+    }
+
+    /* ITINERARIO CON PUNTOS FLORALES */
+    .timeline {
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    /* La línea vertical central */
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background-color: #d4a373;
+      top: 0;
+      bottom: 0;
+      left: 20px;
+      margin-left: -1px;
+    }
+
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+    }
+
+    /* El punto en la línea de tiempo */
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      right: auto;
+      background-color: #fff;
+      border: 3px solid #d4a373;
+      top: 15px;
+      left: 11px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .timeline-hora {
+      font-weight: bold;
+      color: #d4a373;
+      font-size: 1.1em;
+    }
+
+    .timeline-actividad {
+      font-size: 1.2em;
+      color: #333;
+      background: #f9f9f9;
+      padding: 10px;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* CÓDIGO DE VESTIMENTA CON FLORES */
+    .codigo-vestimenta {
+      background: linear-gradient(135deg, rgba(184, 213, 229, 0.1), rgba(255, 255, 255, 0.9));
+      border-radius: 16px;
+      padding: 25px;
+      text-align: center;
+      margin: 25px 0;
+      border: 1px solid var(--borde);
+      box-shadow: var(--sombra-suave);
+      position: relative;
+    }
+
+    .vestimenta-icono {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      display: inline-block;
+      animation: flotar-vestimenta 3s ease-in-out infinite;
+      position: relative;
+    }
+
+    @keyframes flotar-vestimenta {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .vestimenta-icono::before {
+      content: "❀";
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      font-size: 1.2rem;
+      color: var(--rosa-floral);
+      animation: flotar-vestimenta 4s ease-in-out infinite reverse;
+    }
+
+    .vestimenta-titulo {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--color-principal-medio);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .vestimenta-tipo {
+      font-size: 1.3rem;
+      color: var(--color-principal-oscuro);
+      font-weight: 700;
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    /* REGALOS CON FLORES */
+    .regalos {
+      background: linear-gradient(135deg, rgba(232, 244, 252, 0.9), rgba(255, 255, 255, 0.95));
+      border-radius: 18px;
+      padding: 25px;
+      margin: 25px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(184, 213, 229, 0.5);
+    }
+
+    .regalos::before {
+      content: "❀";
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 1.5rem;
+      color: var(--color-secundario);
+      opacity: 0.3;
+      transition: var(--transicion);
+    }
+
+    .regalos::after {
+      content: "❀";
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      font-size: 1.5rem;
+      color: var(--color-secundario);
+      opacity: 0.3;
+      transform: rotate(180deg);
+      transition: var(--transicion);
+    }
+
+    .regalos:hover::before,
+    .regalos:hover::after {
+      opacity: 0.6;
+      transform: rotate(15deg);
+    }
+
+    .regalos-texto {
+      font-size: 1rem;
+      color: var(--texto);
+      line-height: 1.6;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .regalos-destacado {
+      font-weight: 700;
+      color: var(--color-principal-oscuro);
+      background: rgba(255, 255, 255, 0.8);
+      padding: 10px 20px;
+      border-radius: 50px;
+      display: inline-block;
+      margin-top: 10px;
+      border: 2px dashed var(--color-secundario);
+    }
+
+    /* CONFIRMACIÓN CON FONDO FLORAL */
+    .confirmacion {
+      text-align: center;
+      padding: 30px;
+      background: linear-gradient(135deg, var(--fondo-card), var(--color-principal-claro));
+      border-radius: 20px;
+      margin: 30px 0;
+      border: 2px solid var(--color-principal);
+      position: relative;
+    }
+
+    .confirmacion::before {
+      content: "❀";
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 1.5rem;
+      color: var(--rosa-floral);
+      opacity: 0.3;
+    }
+
+    .confirmacion::after {
+      content: "❀";
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      font-size: 1.5rem;
+      color: var(--rosa-floral);
+      opacity: 0.3;
+      transform: rotate(180deg);
+    }
+
+    .confirmacion-titulo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.2rem;
+      color: var(--color-principal-oscuro);
+      margin-bottom: 15px;
+    }
+
+    .confirmacion-texto {
+      font-size: 1rem;
+      color: var(--texto);
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .confirmacion-fecha {
+      display: inline-block;
+      padding: 8px 20px;
+      background: var(--color-principal);
+      color: var(--texto);
+      border-radius: 50px;
+      font-weight: 700;
+      margin: 15px 0;
+      box-shadow: 0 5px 15px rgba(123, 169, 197, 0.2);
+    }
+
+    /* FORMULARIO CON DETALLES FLORALES */
+    .formulario {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      margin-top: 25px;
+      box-shadow: var(--sombra-suave);
+      border: 1px solid var(--borde);
+      position: relative;
+    }
+
+    .formulario::before {
+      content: "❀";
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.5rem;
+      color: var(--color-principal);
+      background: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      z-index: 1;
+    }
+
+    .grupo-formulario {
+      margin-bottom: 20px;
+    }
+
+    .etiqueta {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--color-principal-oscuro);
+      font-size: 0.95rem;
+    }
+
+    .input-texto {
+      width: 100%;
+      padding: 15px 20px;
+      border-radius: 12px;
+      border: 2px solid var(--borde);
+      font-size: 1rem;
+      font-family: inherit;
+      transition: var(--transicion);
+      background: var(--gris-claro);
+    }
+
+    .input-texto:focus {
+      outline: none;
+      border-color: var(--color-principal);
+      box-shadow: 0 0 0 3px rgba(184, 213, 229, 0.3);
+      background: white;
+    }
+
+    .grupo-radio {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .radio-label-inline {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .radio-input-inline {
+      margin-right: 8px;
+      accent-color: var(--color-principal);
+    }
+
+    /* BOTÓN CON FLOR */
+    .boton-enviar {
+      width: 100%;
+      padding: 18px;
+      background: linear-gradient(135deg, var(--color-principal-oscuro), var(--color-principal));
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transicion);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 20px;
+      box-shadow: 0 10px 25px rgba(123, 169, 197, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .boton-enviar::before {
+      content: "❀";
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.7;
+    }
+
+    .boton-enviar:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(123, 169, 197, 0.4);
+      background: linear-gradient(135deg, var(--color-principal), var(--color-principal-oscuro));
+    }
+
+    .boton-enviar:active {
+      transform: translateY(-1px);
+    }
+
+    .nota-formulario {
+      font-size: 0.85rem;
+      color: var(--texto-claro);
+      text-align: center;
+      margin-top: 20px;
+      line-height: 1.5;
+    }
+
+    /* ESTADOS DE ÉXITO/ERROR */
+    .mensaje-exito {
+      background: linear-gradient(135deg, #D1FAE5, #ECFDF5);
+      border: 2px solid var(--exito);
+      color: var(--exito);
+      padding: 20px;
+      border-radius: 16px;
+      text-align: center;
+      margin-top: 20px;
+      display: none;
+      animation: aparecer 0.5s ease-out;
+    }
+
+    .mensaje-error {
+      background: linear-gradient(135deg, #FEE2E2, #FEF2F2);
+      border: 2px solid var(--error);
+      color: var(--error);
+      padding: 20px;
+      border-radius: 16px;
+      text-align: center;
+      margin-top: 20px;
+      display: none;
+      animation: aparecer 0.5s ease-out;
+    }
+
+    /* FOOTER FLORAL */
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(184, 213, 229, 0.3);
+      color: var(--color-principal-medio);
+      font-size: 0.9rem;
+      position: relative;
+    }
+
+    .footer::before {
+      content: "❀";
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--color-secundario);
+      font-size: 1rem;
+      background: white;
+      padding: 0 10px;
+    }
+
+    /* Botón para ocultar invitación */
+    .boton-ocultar {
+      background: linear-gradient(135deg, var(--color-secundario), #E8D4A6);
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: var(--transicion);
+      box-shadow: 0 8px 20px rgba(214, 186, 124, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 20px auto;
+    }
+
+    .boton-ocultar:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(214, 186, 124, 0.4);
+      background: linear-gradient(135deg, #E8D4A6, var(--color-secundario));
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      body {
+        padding: 15px;
+      }
+      
+      .portada {
+        padding: 30px 20px;
+      }
+      
+      .portada-titulo {
+        font-size: 2.2rem;
+      }
+      
+      .portada-foto {
+        width: 180px;
+        height: 180px;
+      }
+      
+      .card {
+        padding: 25px 20px;
+        border-radius: 24px;
+      }
+      
+      .monograma {
+        width: 120px;
+        height: 120px;
+      }
+      
+      .nombre {
+        font-size: 2.2rem;
+      }
+      
+      .dia {
+        font-size: 3.5rem;
+      }
+      
+      .contador {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .lugar-tipo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+      
+      .grupo-radio {
+        flex-direction: column;
+      }
+      
+      .decoracion {
+        opacity: 0.5;
+      }
+      
+      /* Ocultar algunas decoraciones en móvil */
+      .nombre-floral::before,
+      .nombre-floral::after,
+      .seccion::before {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .portada-titulo {
+        font-size: 1.8rem;
+      }
+      
+      .portada-foto {
+        width: 150px;
+        height: 150px;
+      }
+      
+      .boton-mostrar {
+        padding: 15px 30px;
+        font-size: 1rem;
+      }
+      
+      .monograma {
+        width: 100px;
+        height: 100px;
+      }
+      
+      .nombre {
+        font-size: 1.8rem;
+      }
+      
+      .dia {
+        font-size: 2.8rem;
+      }
+      
+      .contador-item {
+        padding: 12px 8px;
+      }
+      
+      .contador-numero {
+        font-size: 1.5rem;
+      }
+      
+      .formulario {
+        padding: 20px 15px;
+      }
+      
+      .boton-enviar::before {
+        display: none;
+      }
+    }
+
+    /* ANIMACIONES ADICIONALES */
+    .animar-entrada {
+      animation: deslizar 0.8s ease-out;
+    }
+
+    .pulso {
+      animation: pulso 2s infinite;
+    }
+
+    @keyframes pulso {
+      0% { box-shadow: 0 0 0 0 rgba(184, 213, 229, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(184, 213, 229, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(184, 213, 229, 0); }
+    
+    }
+    /* FUENTES ROMÁNTICAS */
+.portada-titulo {
+  font-family: "Parisienne", cursive; /* Muy romántica y floral */
+  font-size: 3.2rem;
+  color: var(--color-principal-oscuro);
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.portada-subtitulo {
+  font-family: "Alex Brush", cursive; /* Caligráfica elegante */
+  font-size: 2rem;
+  color: var(--color-secundario);
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+.portada-mensaje {
+  font-family: "Montserrat", sans-serif; /* Moderna y legible */
+  font-size: 1rem;
+  color: var(--texto-suave);
+  margin: 25px 0;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
+  </style>
+</head>
+<body>
+  <!-- Decoraciones florales fijas -->
+  <div class="decoracion flor-1"></div>
+  <div class="decoracion flor-2"></div>
+  <div class="decoracion flor-3"></div>
+  <div class="decoracion flor-4"></div>
+  <div class="decoracion flor-5"></div>
+
+  <div class="wrapper">
+    <!-- PORTADA INICIAL -->
+    <div class="portada">
+      <h1 class="portada-titulo">¡Te Invitamos!</h1>
+      <p class="portada-subtitulo">A la boda Portillo Sánchez</p>
+      
+      <img 
+        src="https://dl.dropboxusercontent.com/scl/fi/tnzuxtkzrezg4kkqxsl4t/WhatsApp-Image-2025-12-20-at-11.08.50-PM.jpeg?rlkey=sgy8hpajrys9rj8asfs2x7iww&st=q379rh3t&dl=1" 
+        alt="Jazmin y Efrain" 
+        class="portada-foto"
+      >
+      
+      <p class="portada-mensaje">
+        Haz clic en el botón para descubrir todos los detalles<br>
+        de nuestra boda y confirmar tu asistencia
+      </p>
+      
+      <button class="boton-mostrar" onclick="mostrarInvitacion()">
+        <i class="fas fa-heart"></i> Ver Invitación Completa
+      </button>
+    </div>
+
+    <!-- INVITACIÓN COMPLETA (OCULTA INICIALMENTE) -->
+    <div id="invitacion-completa">
+      <div class="card">
+        <!-- Decoraciones florales en esquinas -->
+        <div class="esquina-floral esquina-floral-tl"></div>
+        <div class="esquina-floral esquina-floral-br"></div>
+
+        <!-- Cabecera -->
+        <div class="cabecera">
+          <div class="bendicion">Con la gracia de Dios iluminando nuestro camino y el respaldo de nuestras familias</div>
+          
+          <div class="monograma">
+            <div class="monograma-inner">
+              <img src="https://dl.dropboxusercontent.com/scl/fi/xss104cygk0k7vx0dw7h2/WhatsApp-Image-2025-12-22-at-3.09.40-PM.jpeg?rlkey=kqsfocz7fvpg02c97rryk8sam&st=jhx2dszg&dl=1" alt="Jazmin y Efrain" class="monograma-foto">
+            </div>
+          </div>
+        </div>
+
+        <!-- Nombres con flores -->
+        <div class="nombres">
+          <div class="nombre nombre-jazmin nombre-floral"><span>Jazmin Sanchez</span></div>
+          <div class="y">y</div>
+          <div class="nombre nombre-efrain nombre-floral"><span>Efrain Portillo</span></div>
+        </div>
+
+        <!-- Versículo con flores -->
+        <div class="versiculo animar-entrada">
+          <p class="texto-versiculo">
+            "El amor nunca se da por vencido, nunca pierde la fe, siempre tiene esperanzas y se mantiene firme en toda circunstancia."
+          </p>
+          <div class="referencia">1 Corintios 13:7</div>
+        </div>
+
+        <!-- Fecha destacada con flor -->
+        <div class="fecha-destacada animar-entrada">
+          <div class="fecha-flor">❀</div>
+          <div class="dia" id="contador-dias">07</div> 
+          
+          <div class="mes">Marzo</div>
+          <div class="anio">2026</div>
+          
+          <div class="contador">
+            <div class="contador-item">
+              <div class="contador-numero" id="dias">00</div>
+              <div class="contador-etiqueta">Días</div>
+            </div>
+            <div class="contador-item">
+              <div class="contador-numero" id="horas">00</div>
+              <div class="contador-etiqueta">Horas</div>
+            </div>
+            <div class="contador-item">
+              <div class="contador-numero" id="minutos">00</div>
+              <div class="contador-etiqueta">Minutos</div>
+            </div>
+            <div class="contador-item">
+              <div class="contador-numero" id="segundos">00</div>
+              <div class="contador-etiqueta">Segundos</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lugar -->
+        <div class="seccion">
+          <h2 class="titulo-seccion">
+            <i class="fas fa-location-dot icono-titulo"></i>Lugar
+          </h2>
+          <p class="seccion-descripcion" style="text-align:center; color:var(--texto-suave); margin-bottom:20px;">
+            Ceremonia y recepción en un mismo lugar para disfrutar cada momento juntos
+          </p>
+          
+          <div class="lugar-card animar-entrada">
+            <div class="lugar-tipo">
+              <div class="lugar-icono">
+                <i class="fas fa-champagne-glasses"></i>
+              </div>
+              <div class="lugar-tipo-texto">Ceremonia & Recepción</div>
+            </div>
+            
+            <div class="lugar-nombre">Sala de Recepciones Los Revolorios</div>
+            <div class="lugar-direccion">
+              10a Avenida Sur<br>
+              Chalchuapa, El Salvador
+            </div>
+            
+            <p style="color:var(--texto-claro); margin:15px 0; font-size:0.95rem;">
+              Un espacio especial donde celebraremos nuestro amor con los seres más queridos.
+            </p>
+            
+            <a href="https://maps.app.goo.gl/PUWRjsCwZabVK9Vz6" target="_blank" class="lugar-mapa">
+              <i class="fas fa-map-marker-alt"></i>
+              Ver en Google Maps
+            </a>
+          </div>
+        </div>
+
+        <!-- Itinerario -->
+        <div class="seccion">
+          <h2 class="titulo-seccion">
+            <i class="fas fa-clock icono-titulo"></i>Itinerario
+          </h2>
+          
+          <div class="timeline animar-entrada">
+            <div class="timeline-item">
+              <div class="timeline-hora">3:00 PM</div>
+              <div class="timeline-actividad">🥂 Llegada de invitados</div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-hora">3:30 PM</div>
+              <div class="timeline-actividad">👋 Bienvenida</div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-hora">4:00 PM</div>
+              <div class="timeline-actividad">💍 Ceremonia de matrimonio</div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-hora">5:00 PM</div>
+              <div class="timeline-actividad">🎉 Juegos y momentos especiales</div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-hora">6:00 PM</div>
+              <div class="timeline-actividad">🍽️ Brindis y cena</div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-hora">7:00 PM</div>
+              <div class="timeline-actividad">💐 Entrega de ramo y momento para fotografías</div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-hora">8:00 PM</div>
+              <div class="timeline-actividad">💃 Baile y celebración</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Código de vestimenta -->
+        <div class="seccion">
+          <h2 class="titulo-seccion">
+            <i class="fas fa-star icono-titulo"></i>Detalles
+          </h2>
+          
+          <div class="codigo-vestimenta animar-entrada">
+            <div class="vestimenta-icono">👔👗</div>
+            <div class="vestimenta-titulo">Código de vestimenta</div>
+            <div class="vestimenta-tipo">Formal / Casual</div>
+          </div>
+          
+          <div class="regalos animar-entrada">
+            <p class="regalos-texto">
+              Su presencia es nuestro mejor regalo. <br> Como ya tenemos nuestro hogar equipado, si desean hacernos un obsequio, agradeceríamos que fuera mediante lluvia de sobres
+            </p>
+            <div class="regalos-destacado">
+              Habrá un buzón disponible durante el evento.
+            </div>
+          </div>
+        </div>
+
+        <!-- Confirmación -->
+        <div class="seccion">
+          <div class="confirmacion animar-entrada">
+            <h2 class="confirmacion-titulo">Confirmar Asistencia</h2>
+            <p class="confirmacion-texto">
+              Hemos reservado 5 lugares en tu honor. Agradeceremos que nos confirmes si podrás acompañarnos en este día tan especial de nuestras vidas
+            </p>
+            <div class="confirmacion-fecha">
+              Fecha límite: 15 de Febrero 2026
+            </div>
+          </div>
+
+          <!-- Formulario -->
+          <div class="formulario" id="formulario">
+            <div id="mensaje-exito" class="mensaje-exito" style="display: none;">
+              <i class="fas fa-check-circle" style="font-size:2rem; margin-bottom:10px;"></i><br>
+              ¡Gracias por confirmar tu asistencia!<br>
+              Tu respuesta ha sido registrada correctamente.
+            </div>
+            
+            <div id="mensaje-error" class="mensaje-error" style="display: none;">
+              <i class="fas fa-exclamation-circle" style="font-size:2rem; margin-bottom:10px;"></i><br>
+              Ocurrió un error al enviar tu respuesta.<br>
+              Por favor, intenta nuevamente o contáctanos directamente al numero .
+            </div>
+
+            <form method="POST" action="https://script.google.com/macros/s/AKfycbxLGaPTEOSAr5P5fgtBO8rw80k5ph9cwmHhN1Lup7KLhtZUx42B2zZLRhh8pmBLm0-O/exec" id="form-confirmacion">
+              <div class="grupo-formulario">
+                <label class="etiqueta">Tu nombre completo</label>
+                <input type="text" class="input-texto" id="nombre" name="nombre" placeholder="Ej: Erika Jazmin Sanchez" required>
+              </div>
+
+              <div class="grupo-formulario">
+                <label class="etiqueta">¿Asistirás a nuestra boda?</label>
+                <div class="grupo-radio">
+                  <label class="radio-label-inline">
+                    <input type="radio" class="radio-input-inline" name="asistencia" value="Si" required>
+                    Sí, asistiré
+                  </label>
+                  <label class="radio-label-inline">
+                    <input type="radio" class="radio-input-inline" name="asistencia" value="No">
+                    Lamento no poder asistir
+                  </label>
+                </div>
+              </div>
+
+              <!-- Acompañante -->
+              <div id="acompananteSection" style="display: none;">
+                <div class="grupo-formulario">
+                  <label class="etiqueta">¿Llevarás acompañante?</label>
+                  <div class="grupo-radio">
+                    <label class="radio-label-inline">
+                      <input type="radio" class="radio-input-inline" name="trae_acompanante" value="Si">
+                      Sí, llevaré acompañante
+                    </label>
+                    <label class="radio-label-inline">
+                      <input type="radio" class="radio-input-inline" name="trae_acompanante" value="No">
+                      No, iré solo(a)
+                    </label>
+                  </div>
+                </div>
+
+                <div id="nombreAcompananteDiv" style="display: none; margin-top: 15px;">
+                  <label class="etiqueta">Nombre de los acompañante (separados por comas)</label>
+                  <input type="text" class="input-texto" id="nombre_acompanante" name="nombre_acompanante" placeholder="Ej: Efrain Portillo, Jazmin Sanchez">
+                </div>
+              </div>
+
+              <button type="submit" class="boton-enviar" id="boton-enviar">
+                <i class="fas fa-paper-plane"></i> Enviar Confirmación
+              </button>
+              
+              <p class="nota-formulario">
+                Tu respuesta nos ayudará a organizar cada detalle de este día especial.<br>
+                ¡Gracias por ser parte de nuestra historia de amor!
+              </p>
+            </form>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+          Si tienes consultas, puedes escribir por WhatsApp directamente a la
+          <a href="https://wa.me/50379478573" target="_blank">Novia</a>
+          o al
+          <a href="https://wa.me/50377990445" target="_blank">Novio</a>.
+          <p>Con amor, Jazmin & Efrain 💞</p>
+          <p style="margin-top:8px; font-size:0.8rem; opacity:0.8;">
+            "Que nuestro amor florezca como las flores más hermosas"
+          </p>
+        </div>
+        
+        <!-- Botón para ocultar la invitación -->
+        <div style="text-align: center; margin-top: 30px;">
+          <button class="boton-ocultar" onclick="ocultarInvitacion()">
+            <i class="fas fa-arrow-up"></i> Volver al Inicio
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Función para mostrar la invitación completa
+    function mostrarInvitacion() {
+      const invitacion = document.getElementById('invitacion-completa');
+      const boton = document.querySelector('.boton-mostrar');
+      
+      // Mostrar la invitación
+      invitacion.style.display = 'block';
+      
+      // Cambiar texto del botón si está visible
+      if (boton) {
+        boton.innerHTML = '<i class="fas fa-check"></i> Invitación Visible';
+        boton.disabled = true;
+        setTimeout(() => {
+          boton.style.display = 'none';
+        }, 500);
+      }
+      
+      // Desplazar suavemente a la invitación
+      setTimeout(() => {
+        invitacion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 300);
+    }
+    
+    // Función para ocultar la invitación
+    function ocultarInvitacion() {
+      const invitacion = document.getElementById('invitacion-completa');
+      const boton = document.querySelector('.boton-mostrar');
+      const portada = document.querySelector('.portada');
+      
+      // Ocultar la invitación
+      invitacion.style.display = 'none';
+      
+      // Restaurar botón
+      if (boton) {
+        boton.style.display = 'inline-flex';
+        boton.innerHTML = '<i class="fas fa-heart"></i> Ver Invitación Completa';
+        boton.disabled = false;
+      }
+      
+      // Desplazar suavemente a la portada
+      setTimeout(() => {
+        portada.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 300);
+    }
+    
+    // Cuenta regresiva mejorada
+    const fechaBoda = new Date('March 7, 2026 15:00:00').getTime();
+    
+    function actualizarContador() {
+      const ahora = new Date().getTime();
+      const diferencia = fechaBoda - ahora;
+      
+      if (diferencia < 0) {
+        document.getElementById('contador-dias').textContent = '¡Hoy es el día!';
+        document.querySelectorAll('.contador-numero').forEach(el => el.textContent = '00');
+        return;
+      }
+      
+      const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+      
+      document.getElementById('dias').textContent = dias.toString().padStart(2, '0');
+      document.getElementById('horas').textContent = horas.toString().padStart(2, '0');
+      document.getElementById('minutos').textContent = minutos.toString().padStart(2, '0');
+      document.getElementById('segundos').textContent = segundos.toString().padStart(2, '0');
+      
+      // Destacar cuando falten pocos días
+      if (dias <= 7) {
+        document.querySelector('.fecha-destacada').classList.add('pulso');
+      }
+    }
+    
+    // Inicializar contador
+    actualizarContador();
+    setInterval(actualizarContador, 1000);
+    
+    // Lógica del formulario
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('form-confirmacion');
+      const mensajeExito = document.getElementById('mensaje-exito');
+      const mensajeError = document.getElementById('mensaje-error');
+      const acompananteSection = document.getElementById('acompananteSection');
+      const acompNameDiv = document.getElementById('nombreAcompananteDiv');
+      const acompNameInput = document.getElementById('nombre_acompanante');
+      const botonEnviar = document.getElementById('boton-enviar');
+      
+      // Mostrar/ocultar sección de acompañante
+      const asistenciaRadios = document.querySelectorAll('input[name="asistencia"]');
+      asistenciaRadios.forEach(r => {
+        r.addEventListener('change', () => {
+          if (r.value === 'Si' && r.checked) {
+            acompananteSection.style.display = 'block';
+          } else if (r.value === 'No' && r.checked) {
+            acompananteSection.style.display = 'none';
+            // Resetear campos de acompañante
+            document.querySelectorAll('input[name="trae_acompanante"]').forEach(a => a.checked = false);
+            acompNameDiv.style.display = 'none';
+            if (acompNameInput) acompNameInput.value = '';
+          }
+        });
+      });
+      
+      // Mostrar/ocultar campo para nombre del acompañante
+      const acompRadios = document.querySelectorAll('input[name="trae_acompanante"]');
+      acompRadios.forEach(r => {
+        r.addEventListener('change', () => {
+          if (r.value === 'Si' && r.checked) {
+            acompNameDiv.style.display = 'block';
+          } else if (r.value === 'No' && r.checked) {
+            acompNameDiv.style.display = 'none';
+            if (acompNameInput) acompNameInput.value = '';
+          }
+        });
+      });
+      
+      // Envío del formulario
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Validar que si seleccionó "Sí" a acompañante, complete el nombre
+        const traeAcompanante = document.querySelector('input[name="trae_acompanante"]:checked');
+        if (traeAcompanante && traeAcompanante.value === 'Si' && (!acompNameInput.value || !acompNameInput.value.trim())) {
+          alert('Por favor ingresa el nombre de tu acompañante');
+          acompNameInput.focus();
+          return;
+        }
+        
+        // Cambiar estado del botón
+        const originalText = botonEnviar.innerHTML;
+        botonEnviar.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+        botonEnviar.disabled = true;
+        
+        // Crear FormData para enviar
+        const formData = new FormData(form);
+        
+        // Enviar al endpoint de Google Apps Script
+        fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors'
+        })
+        .then(() => {
+          mensajeExito.style.display = 'block';
+          mensajeError.style.display = 'none';
+          form.reset();
+          acompananteSection.style.display = 'none';
+          acompNameDiv.style.display = 'none';
+          
+          // Scroll suave al mensaje de éxito
+          mensajeExito.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          mensajeError.style.display = 'block';
+          mensajeExito.style.display = 'none';
+          mensajeError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        })
+        .finally(() => {
+          // Restaurar botón
+          botonEnviar.innerHTML = originalText;
+          botonEnviar.disabled = false;
+          
+          // Ocultar mensajes después de 8 segundos
+          setTimeout(() => {
+            mensajeExito.style.display = 'none';
+            mensajeError.style.display = 'none';
+          }, 8000);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
